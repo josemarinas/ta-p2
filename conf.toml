@@ -1,0 +1,41 @@
+[local]
+  bin         = "bin/mapred"
+  path        = "/opt/hadoop/hadoop-3.2.1"
+  hdfsClient  = ""
+  [local.task1]
+    input     = "/opt/hadoop/shared/test-a"
+    output    = "/home/jose/universidad/ta/p2/output/task1"
+    mapper    = "/home/jose/universidad/ta/p2/task1/main -task 0 -phase map"
+    reducer   = "/home/jose/universidad/ta/p2/task1/main -task 0 -phase reduce"
+  [local.task2]
+    input     = "/opt/hadoop/shared/test-"
+    output    = "/home/jose/universidad/ta/p2/output/task2"
+    mapper    = "/home/jose/universidad/ta/p2/task2/main -task 0 -phase map"
+    reducer   = "/home/jose/universidad/ta/p2/task2/main -task 0 -phase reduce"
+[vbox]
+  bin         = "bin/mapred"
+  path        = "/home/hadoop/hadoop"
+  hdfsClient  = "http://localhost:9000"
+  [vbox.task1]
+    input     = "/user/hadoop/TA/grams/googlebooks-eng-all-1gram-20120701-a"
+    output    = "/home/jose/universidad/ta/p2/output.task1"
+    mapper    = "/home/jose/universidad/ta/p2/task1/main -task 0 -phase map"
+    reducer   = "/home/jose/universidad/ta/p2/task1/main -task 0 -phase reduce"
+  [vbox.task2]
+    input     = "/opt/hadoop/shared/test2"
+    output    = "/home/jose/universidad/ta/p2/output.task2"
+    mapper    = "/home/jose/universidad/ta/p2/task2/main -task 0 -phase map"
+    reducer   = "/home/jose/universidad/ta/p2/task2/main -task 0 -phase reduce"
+[aws]
+  bin         = "bin/mapred"
+  path        = "/opt/hadoop/hadoop-3.2.1"
+  [aws.task1]
+    input     = "/opt/hadoop/shared/test"
+    output    = "/home/jose/universidad/ta/p2/output.task1"
+    mapper    = "/home/jose/universidad/ta/p2/task1/main -task 0 -phase map"
+    reducer   = "/home/jose/universidad/ta/p2/task1/main -task 0 -phase reduce"
+  [aws.task2]
+    input     = "/opt/hadoop/shared/test2"
+    output    = "/home/jose/universidad/ta/p2/output.task2"
+    mapper    = "/home/jose/universidad/ta/p2/task2/main -task 0 -phase map"
+    reducer   = "/home/jose/universidad/ta/p2/task2/main -task 0 -phase reduce"

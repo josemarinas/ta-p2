@@ -1,0 +1,8 @@
+task1/main
+task1/go.*
+task2/main
+task2/go.*
+output/
+go.mod
+go.sum
+main
